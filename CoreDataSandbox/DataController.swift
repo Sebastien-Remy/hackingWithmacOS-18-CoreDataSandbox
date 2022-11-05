@@ -16,7 +16,11 @@ class DataController: ObservableObject {
         container.loadPersistentStores { descritption, error in
             if let error = error {
                 print("Core Data failed to load: \(error.localizedDescription)")
+                return
             }
+            
+            // Ask core data to merge duplicate object based on their properties
+            self.container.viewContext.mergePolicy = NSMergePolicy.mergeByPropertyStoreTrump
         }
     }
     
