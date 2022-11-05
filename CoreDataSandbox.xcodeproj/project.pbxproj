@@ -13,6 +13,8 @@
 		96CC7BDA2916C9F3003D08B7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96CC7BD92916C9F3003D08B7 /* Preview Assets.xcassets */; };
 		96CC7BE22916CAB9003D08B7 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BE12916CAB9003D08B7 /* DataController.swift */; };
 		96CC7BE52916CB28003D08B7 /* CoreDataSandbox.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BE32916CB28003D08B7 /* CoreDataSandbox.xcdatamodeld */; };
+		96CC7BE82916CD6A003D08B7 /* Movie+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BE62916CD6A003D08B7 /* Movie+CoreDataClass.swift */; };
+		96CC7BE92916CD6A003D08B7 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96CC7BE72916CD6A003D08B7 /* Movie+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		96CC7BDB2916C9F3003D08B7 /* CoreDataSandbox.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CoreDataSandbox.entitlements; sourceTree = "<group>"; };
 		96CC7BE12916CAB9003D08B7 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		96CC7BE42916CB28003D08B7 /* CoreDataSandbox.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataSandbox.xcdatamodel; sourceTree = "<group>"; };
+		96CC7BE62916CD6A003D08B7 /* Movie+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataClass.swift"; sourceTree = "<group>"; };
+		96CC7BE72916CD6A003D08B7 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,8 @@
 		96CC7BD12916C9F0003D08B7 /* CoreDataSandbox */ = {
 			isa = PBXGroup;
 			children = (
+				96CC7BE62916CD6A003D08B7 /* Movie+CoreDataClass.swift */,
+				96CC7BE72916CD6A003D08B7 /* Movie+CoreDataProperties.swift */,
 				96CC7BD22916C9F0003D08B7 /* CoreDataSandboxApp.swift */,
 				96CC7BD42916C9F0003D08B7 /* ContentView.swift */,
 				96CC7BE12916CAB9003D08B7 /* DataController.swift */,
@@ -148,6 +154,8 @@
 				96CC7BD52916C9F0003D08B7 /* ContentView.swift in Sources */,
 				96CC7BE22916CAB9003D08B7 /* DataController.swift in Sources */,
 				96CC7BE52916CB28003D08B7 /* CoreDataSandbox.xcdatamodeld in Sources */,
+				96CC7BE82916CD6A003D08B7 /* Movie+CoreDataClass.swift in Sources */,
+				96CC7BE92916CD6A003D08B7 /* Movie+CoreDataProperties.swift in Sources */,
 				96CC7BD32916C9F0003D08B7 /* CoreDataSandboxApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
