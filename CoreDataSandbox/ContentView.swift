@@ -26,6 +26,10 @@ struct ContentView: View {
             }
         }
         Button("Add") {
+            let fr = Country(context: managedObjectContext)
+            fr.fullName = "France"
+            fr.shortName = "FR"
+            
             let candy1 = Candy(context: managedObjectContext)
             candy1.name = "Mars"
             candy1.origin = Country(context: managedObjectContext)
@@ -53,9 +57,21 @@ struct ContentView: View {
             candy4.origin?.shortName = "CH"
             candy4.origin?.fullName = "Switzerland"
             
+            let candy5 = Candy(context: managedObjectContext)
+            candy5.name = "St Honoré"
+            candy5.origin = fr
+            
+            let candy6 = Candy(context: managedObjectContext)
+            candy6.name = "Opéra"
+            candy6.origin = fr
+            
             try? managedObjectContext.save()
         }
+          
     }
+    
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
