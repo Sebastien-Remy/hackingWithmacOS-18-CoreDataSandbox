@@ -11,42 +11,49 @@ import SwiftUI
 struct ContentView: View {
     @Environment(\.managedObjectContext) var managedObjectContext
     @FetchRequest(sortDescriptors: []
-//                  predicate: NSPredicate(format: "universe ==  %@", "Star Wars")
-//                  predicate: NSPredicate(format: "name <  %@", "F")
-//                  predicate: NSPredicate(format: "universe IN %@", ["Alien", "Firefly", "Star Trek"])
-    ) var ships: FetchedResults<Ship>
+
+    ) var countries: FetchedResults<Country>
     
     var body: some View {
-        VStack {
-            List(ships) { ship in
-                Text(ship.name ?? "unknown")
+        List {
+            ForEach(countries) { country in
+                Section(country.countryFullName) {
+                    ForEach(country.countryCandy) {
+                        candy in
+                        Text(candy.candyName)
+                    }
+                }
             }
-            Button("Show Star Wars") {
-                ships.nsPredicate = NSPredicate(format: "universe == %@", "Star Wars")
-            }
-            Button("Show Star Trek") {
-                ships.nsPredicate = NSPredicate(format: "universe == %@", "Star Trek")
-            }
-            Button("Add exemple") {
-                let ship1 = Ship(context: managedObjectContext)
-                ship1.name = "Entreprise"
-                ship1.universe = "Star Trek"
-                
-                let ship2 = Ship(context: managedObjectContext)
-                ship2.name = "Defiant"
-                ship2.universe = "Star Trek"
-                
-                let ship3 = Ship(context: managedObjectContext)
-                ship3.name = "Millenium Falcon"
-                ship3.universe = "Star Wars"
-                
-                let ship4 = Ship(context: managedObjectContext)
-                ship4.name = "Executor"
-                ship4.universe = "Star Wars"
-                
-                try? managedObjectContext.save()
-                
-            }
+        }
+        Button("Add") {
+            let candy1 = Candy(context: managedObjectContext)
+            candy1.name = "Mars"
+            candy1.origin = Country(context: managedObjectContext)
+            candy1.origin?.shortName = "UK"
+            candy1.origin?.fullName = "United kingdom"
+            
+            
+            let candy2 = Candy(context: managedObjectContext)
+            candy2.name = "Kitkat"
+            candy2.origin = Country(context: managedObjectContext)
+            candy2.origin?.shortName = "UK"
+            candy2.origin?.fullName = "United kingdom"
+            
+            
+            let candy3 = Candy(context: managedObjectContext)
+            candy3.name = "Twix"
+            candy3.origin = Country(context: managedObjectContext)
+            candy3.origin?.shortName = "UK"
+            candy3.origin?.fullName = "United kingdom"
+            
+            
+            let candy4 = Candy(context: managedObjectContext)
+            candy4.name = "Toblerone"
+            candy4.origin = Country(context: managedObjectContext)
+            candy4.origin?.shortName = "CH"
+            candy4.origin?.fullName = "Switzerland"
+            
+            try? managedObjectContext.save()
         }
     }
 }
